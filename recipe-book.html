@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Book</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+.add-recipe {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.recipe-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.recipe-card h3 {
+    margin-top: 0;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+</style>
+</head>
+<body>
+
+    
+    <div class="container">
+        <h1>Recipe Book</h1>  
+        
+        <!-- Add Recipe Form -->
+        <div class="add-recipe">
+            <h2>Add New Recipe</h2>
+            <input type="text" id="recipeName" placeholder="Recipe Name" required>
+            <textarea id="ingredients" placeholder="Ingredients (comma-separated)" required></textarea>
+            <textarea id="steps" placeholder="Steps" required></textarea>
+            <input type="file" id="recipeImage" accept="image/*">
+            <button id="addRecipeBtn">Add Recipe</button>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-recipe">
+            <input type="text" id="searchInput" placeholder="Search Recipes">
+        </div>
+        
+        <!-- Recipe List -->
+        <div id="recipeList">
+            
+        </div>
+    </div>
+
+<script>
+ // DOM Elements
+const addRecipeBtn = document.getElementById("addRecipeBtn");
+const recipeList = document.getElementById("recipeList");
+const searchInput = document.getElementById("searchInput");
+
+let recipes = [];
+
+// Load Recipes from Local Storage
+function loadRecipes() {
+    const savedRecipes = localStorage.getItem("recipes");
+    if (savedRecipes) {
+        recipes = JSON.parse(savedRecipes);
+        displayRecipes(recipes);
+    }
+}
+
+// Save Recipes to Local Storage
+function saveRecipes() {
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+}
+
+// Add New Recipe
+addRecipeBtn.addEventListener("click", () => {
+    const recipeName = document.getElementById("recipeName").value.trim();
+    const ingredients = document.getElementById("ingredients").value.trim();
+    const steps = document.getElementById("steps").value.trim();
+    const recipeImageInput = document.getElementById("recipeImage");
+    
+    // Handle image upload
+    const imageFile = recipeImageInput.files[0];
+    let imageURL = '';
+
+    if (imageFile) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            imageURL = e.target.result;
+
+            // Add the recipe after loading image
+            addRecipe(recipeName, ingredients, steps, imageURL);
+        };
+        reader.readAsDataURL(imageFile);
+    } else {
+        // If no image, use a placeholder
+        imageURL = 'https://via.placeholder.com/300';
+        addRecipe(recipeName, ingredients, steps, imageURL);
+    }
+});
+
+// Add Recipe Function
+function addRecipe(name, ingredients, steps, imageURL) {
+    if (name && ingredients && steps) {
+        const newRecipe = {
+            id: Date.now(),
+            name,
+            ingredients: ingredients.split(",").map(item => item.trim()),
+            steps,
+            image: imageURL
+        };
+
+        recipes.push(newRecipe);
+        saveRecipes();
+        displayRecipes(recipes);
+        document.getElementById("recipeName").value = "";
+        document.getElementById("ingredients").value = "";
+        document.getElementById("steps").value = "";
+        document.getElementById("recipeImage").value = "";
+    } else {
+        alert("Please fill out all fields!");
+    }
+}
+
+// Display Recipes
+function displayRecipes(recipeListData) {
+    recipeList.innerHTML = "";
+    if (recipeListData.length === 0) {
+        recipeList.innerHTML = "<p>No recipes found. Add some!</p>";
+        return;
+    }
+
+    recipeListData.forEach(recipe => {
+        const recipeCard = document.createElement("div");
+        recipeCard.className = "recipe-card";
+
+        recipeCard.innerHTML = `
+            <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+            <h3>${recipe.name}</h3>
+            <p><strong>Ingredients:</strong> ${recipe.ingredients.join(", ")}</p>
+            <p><strong>Steps:</strong> ${recipe.steps}</p>
+            <button class="delete-btn" onclick="deleteRecipe(${recipe.id})">Delete</button>
+        `;
+
+        recipeList.appendChild(recipeCard);
+    });
+}
+
+// Delete Recipe
+function deleteRecipe(id) {
+    recipes = recipes.filter(recipe => recipe.id !== id);
+    saveRecipes();
+    displayRecipes(recipes);
+}
+
+// Search Recipes
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    const filteredRecipes = recipes.filter(recipe =>
+        recipe.name.toLowerCase().includes(query) ||
+        recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(query))
+    );
+    displayRecipes(filteredRecipes);
+});
+
+// Initialize App
+loadRecipes();
+   
+</script>
+</body>
+</html>

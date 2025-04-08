@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.about-team {
+    background:linear-gradient(to right, #f7e5da,#832b00);
+    color: #0a0a0a;
+    padding: 50px 20px;
+}
+
+.about-team h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
+}
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background:linear-gradient(to right, #f7e5da,#832b00);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.about-header {
+    background:linear-gradient(to right, #f7e5da,#832b00);
+    color: #0f0e0e;
+    padding: 50px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+    </style>
+</head>
+<body>
+    <div class="about-header">
+        <h1>About Us</h1>
+      
+    </div>
+    <div class="about-content">
+        <div class="about-image">
+            <img src="./images/baby2.jpeg" alt="About Us">
+        </div>
+        <div class="about-text">
+            <h2>Who We Are ?</h2>
+            <p>We are a dedicated team of professionals passionate about simplifying event management. Our platform allows event organizers and attendees to connect seamlessly, creating memorable experiences for everyone involved.</p>
+            <h2>Our Mission !</h2>
+            <p>Our mission is to provide an intuitive, user-friendly platform that takes the stress out of organizing events. Whether it’s a corporate conference or a casual meet-up, we’re here to help you every step of the way.</p>
+            <h2>Why Choose Us ?</h2>
+            <p>We combine cutting-edge technology with personalized support to ensure your events are successful and stress-free. Our platform is designed with you in mind, offering features that cater to both large and small events.</p>
+        </div>
+       
+    </div>
+    <div class="about-team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="./images/girl-2.jpeg" alt="Team Member 1">
+                <h3>Prasanna</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/girl.jpeg" alt="Team Member 2">
+                <h3>Sudhakar</h3>
+                <p>Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/girl-2.jpeg" alt="Team Member 3">
+                <h3>Rudra</h3>
+                <p>Project Manager</p>
+            </div>
+           
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>

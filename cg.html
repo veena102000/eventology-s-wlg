@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Decoration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Event Decoration Services</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#booking">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Our Event Decoration Services</h2>
+        <p>We bring your dream events to life with stunning decorations.</p>
+    </section>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Wedding Decorations</li>
+            <li>Birthday Party Setups</li>
+            <li>Corporate Events</li>
+            <li>Theme Parties</li>
+        </ul>
+    </section>
+    
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="image-container">
+            <img src="image1.jpg" alt="Decoration 1">
+            <img src="image2.jpg" alt="Decoration 2">
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a team of professionals dedicated to making your events spectacular.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <section id="booking">
+        <h2>Book Your Event</h2>
+        <form id="booking-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="date" required>
+            <select>
+                <option value="wedding">Wedding</option>
+                <option value="birthday">Birthday</option>
+                <option value="corporate">Corporate</option>
+            </select>
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Event Decoration Services. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for contacting us! We will get back to you soon.');
+        });
+
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Your booking request has been submitted. We will contact you soon.');
+        });
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 45%;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        form input, form select, form textarea, form button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+        }
+    </style>
+</body>
+</html>

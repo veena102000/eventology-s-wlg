@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Book</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+   /*navbar css*/
+
+
+   /* Navbar Styles */
+header {
+         background:linear-gradient(to right, #f7e5da,#832b00);
+         width: 100%;
+         display: block;
+         
+       
+ }
+ 
+ .navbar {
+
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem;
+     color: #f7e5da;
+    
+ }
+ 
+ .navbar .logo img {
+     height: 60px;
+     width: auto;
+ }
+ 
+ .nav-links {
+     list-style: none;
+     display: flex;
+     margin-left: 200px;
+ }
+ 
+ .nav-links li {
+     margin: 0 1rem;
+ }
+ 
+ .nav-links a {
+     color: #f7e5da;
+    /* background: linear-gradient(to right,  #f7e5da 0%, #832b00 100%);
+     background-clip: text;
+     color: transparent;*/
+     text-decoration: none;
+     font-family:serif ;
+     font-weight: bold;
+     font-size: large;
+     font-size: 1rem;
+     transition: color 0.3s;
+ }
+ 
+ .nav-links a:hover {
+     color: #080707;
+ }
+ 
+ .menu-toggle {
+     display: none;
+     flex-direction: column;
+     cursor: pointer;
+ } 
+ 
+ .menu-toggle .bar {
+     background-color: #f7e5da;
+     height: 3px;
+     width: 25px;
+     margin: 3px 0;
+     transition: 0.3s;
+ }
+ 
+ /* Responsive Styles */
+ @media (max-width: 768px) {
+     .nav-links {
+         display: none;
+         flex-direction: column;
+         width: 100%;
+         position: absolute;
+         top: 60px;
+         left: 0;
+         
+         text-align: center;
+     }
+ 
+     .nav-links.active { 
+         display: flex;
+     }
+ 
+     .nav-links li {
+         margin: 1rem 0;
+     }
+ 
+     .menu-toggle {
+         display: flex;
+     }
+ }
+ /*you can cancel this */
+        /*fhdhfhsdfhds extras */
+        /* Dropdown container */
+        .nav-links .dropdown {
+          position: relative;
+      }
+      
+      /* Dropdown menu */
+      .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #f7e5da; /* Adjust background color as needed */
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          border-radius: 8px;
+          min-width: 160px; /* Adjust width as needed */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+          z-index: 1000;
+      }
+      
+      /* Dropdown items */
+      .dropdown-menu li {
+          padding: 10px;
+      }
+      
+      .dropdown-menu li a {
+          color: #832b00; /* Adjust text color as needed */
+          text-decoration: none;
+          display: block;
+      }
+      
+      /* Show dropdown on hover */
+      .dropdown:hover .dropdown-menu {
+          display: block;
+      }
+      
+      .dropdown-menu li a:hover {
+          /*background-color: #e4d0c1; *//* Adjust hover background color as needed */
+          color: #832b00;
+          
+          text-decoration: underline;
+      }
+      /*ending*/
+
+
+ 
+   /*recipe css*/
+
+   body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  position: absolute;
+  margin-top: 180px;
+  font-family: Arial, sans-serif;
+  background-color: green;
+ justify-content: center;
+ align-items: center;
+  color: #333;
+  padding: 20px;
+  
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea, button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#recipeDisplay {
+  margin-top: 20px;
+}
+
+.recipe-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+</style>
+</head>
+<body>
+<!--navbar-->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./images/lego.png" alt="logo"/>
+        </div>
+        <ul class="nav-links">
+            <li><a href="insta2.html">Home</a></li>
+           <!-- <li><a href="events.html">Events</a></li>-->
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <ul class="dropdown-menu">
+                    <li><a href="birthdays.html">Birthday </a></li>
+                    <li><a href="wedding.html">Wedding</a></li>
+                    <li><a href="genderreveal.html">Gender Reveal</a></li>
+                    <li><a href="babyshower.html">Baby Shower</a></li>
+                    <li><a href="events.html">All Services</a></li>
+                </ul>
+            </li>
+            <li><a href="Hire.html">Hire</a></li>
+            <li><a href="about-us.html">About-us</a></li>
+            
+            <li><a href="contact-us.html">Contact-Us</a></li>
+        </ul>
+        <!--<div class="header"> </div>
+        <button class="cart-button" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i> (<span id="cart-count">0</span>)</button>-->
+   
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+    <!--recipe-->
+  <div class="container">
+    <h1>Recipe Book</h1>
+    
+    <!-- Recipe Form -->
+    <form id="recipeForm">
+      <input type="text" id="recipeName" placeholder="Recipe Name" required>
+      <textarea id="ingredients" placeholder="Ingredients (comma-separated)" required></textarea>
+      <textarea id="preparationSteps" placeholder="Preparation Steps" required></textarea>
+      <input type="file" id="recipeImage" accept="image/*">
+      <button type="submit">Add Recipe</button>
+    </form>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchInput" placeholder="Search Recipes">
+
+    <!-- Recipe Display Section -->
+    <div id="recipeDisplay"></div>
+  </div>
+
+  <script >// Select DOM elements
+    const recipeForm = document.getElementById("recipeForm");
+    const recipeDisplay = document.getElementById("recipeDisplay");
+    const searchInput = document.getElementById("searchInput");
+    
+    // Retrieve recipes from localStorage
+    let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+    
+    // Event Listener for Adding Recipe
+    recipeForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+    
+      // Get form data
+      const recipeName = document.getElementById("recipeName").value;
+      const ingredients = document.getElementById("ingredients").value;
+      const preparationSteps = document.getElementById("preparationSteps").value;
+      const imageFile = document.getElementById("recipeImage").files[0];
+      
+      const reader = new FileReader();
+      reader.readAsDataURL(imageFile);
+      reader.onloadend = () => {
+        const imageUrl = reader.result;
+        
+        // Create recipe object
+        const recipe = {
+          id: Date.now(),
+          name: recipeName,
+          ingredients,
+          steps: preparationSteps,
+          imageUrl,
+        };
+    
+        // Add recipe to list and update localStorage
+        recipes.push(recipe);
+        localStorage.setItem("recipes", JSON.stringify(recipes));
+        displayRecipes(recipes);
+        recipeForm.reset();
+      };
+    });
+    
+    // Display Recipes
+    function displayRecipes(recipesList) {
+      recipeDisplay.innerHTML = "";
+    
+      recipesList.forEach((recipe) => {
+        const recipeCard = document.createElement("div");
+        recipeCard.classList.add("recipe-card");
+    
+        recipeCard.innerHTML = `
+          <h3>${recipe.name}</h3>
+          <img src="${recipe.imageUrl}" alt="${recipe.name}" style="width:100%">
+          <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
+          <p><strong>Preparation:</strong> ${recipe.steps}</p>
+        `;
+    
+        recipeDisplay.appendChild(recipeCard);
+      });
+    }
+    
+    // Search Functionality
+    searchInput.addEventListener("input", (event) => {
+      const query = event.target.value.toLowerCase();
+      const filteredRecipes = recipes.filter(
+        (recipe) =>
+          recipe.name.toLowerCase().includes(query) ||
+          recipe.ingredients.toLowerCase().includes(query)
+      );
+      displayRecipes(filteredRecipes);
+    });
+    
+    // Initialize Display
+    displayRecipes(recipes);
+    </script>
+</body>
+</html>

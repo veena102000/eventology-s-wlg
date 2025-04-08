@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    /*text-align: center;*/
+    padding: 20px;
+    background: lightcoral;
+}
+
+#quiz-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.question {
+    margin-bottom: 20px;
+    margin-left: 0;
+    
+}
+
+.answer {
+    display: block;
+    margin-bottom: 10px;
+ 
+   
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #218838;
+  
+}
+.answer {
+    color: #333; /* Default color */
+}
+
+
+</style>
+</head>
+<body>
+    <h1>JavaScript Fundamentals Quiz</h1>
+    <div id="quiz-container"></div>
+    <button id="submit-btn">Submit</button>
+    <p id="result"></p>
+    <script>
+        // Question bank
+const questions = [
+    {
+        question: "What does HTML stand for?",
+        options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language"],
+        correctAnswer: 2,
+        explanation:"HTML: Hyper Text Markup Language."
+    },
+    {
+        question: "Which language is used for styling web pages?",
+        options: ["HTML", "CSS", "JavaScript"],
+        correctAnswer: 2,
+         explanation:"gddhd."
+    },
+    {
+        question: "Which is not a JavaScript framework?",
+        options: ["React", "Angular", "Python"],
+        correctAnswer: 2,
+         explanation:"gddhd."
+    },
+    {
+        question: "Which HTML element is used to include JavaScript?",
+        options: ["v", "j", "o"],
+        correctAnswer: 2,
+         explanation:"gddhd."
+    },
+    {
+        question: "How do you create a function in JavaScript?",
+        options: ["function myFunction()", "function:myFunction()", "createFunction()"],
+        correctAnswer: 2,
+         explanation:"gddhd."
+    }
+];
+
+// Minimum score to pass
+const passMarks = 4;
+
+// Render the quiz
+const quizContainer = document.getElementById("quiz-container");
+
+questions.forEach((q, index) => {
+    const questionDiv = document.createElement("div");
+    questionDiv.classList.add("question");
+    questionDiv.innerHTML = `<h3>${index + 1}. ${q.question}</h3>`;
+    
+    q.options.forEach((option, i) => {
+        questionDiv.innerHTML += `
+            <label class="answer">
+                <input type="radio" name="question${index}" value="${i}">
+                ${option}
+            </label>`;
+    });
+    
+    //quizContainer.appendChild(questionDiv);
+    questionDiv.innerHTML += `<p class="explanation" id="explanation${index}" style="display:none;"></p>`;
+    quizContainer.appendChild(questionDiv);
+});
+
+
+// Handle submission
+document.getElementById("submit-btn").addEventListener("click", () => {
+    let score = 0;
+    const allQuestions = document.querySelectorAll(".question");
+
+    questions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="question${index}"]:checked`);
+        const answers = allQuestions[index].querySelectorAll(".answer");
+        const explanationElem = document.getElementById(`explanation${index}`);
+        
+               // Display explanation
+               if (selected && parseInt(selected.value) === q.correctAnswer) {
+            explanationElem.textContent = `Correct! ${q.explanation}`;
+            explanationElem.style.color = "green";
+        } else if (selected) {
+            explanationElem.textContent = `Incorrect.correct answer is: ${q.explanation}`;
+            explanationElem.style.color = "red";
+        } else {
+            explanationElem.textContent = `You did not answer this question.`;
+            explanationElem.style.color = "orange";
+        }
+
+        explanationElem.style.display = "block";
+
+
+        // Calculate score
+        if (selected && parseInt(selected.value) === q.correctAnswer) {
+            score++;
+        }
+    });
+
+    // Display result
+    document.getElementById("result").textContent = `You scored ${score} out of ${questions.length}.`;
+
+ // Display result with pass/fail feedback
+ const resultText = score >= passMarks
+        ? `You scored ${score} out of ${questions.length}. Yeah Congratulations.....! You passed! 🎉`
+        : `You scored ${score} out of ${questions.length}. Hmmmm Sorry, You failed. Try again. 😞`;
+
+    document.getElementById("result").textContent = resultText;
+    document.getElementById("result").style.color = score >= passMarks ? "green" : "red";
+});
+// Handle submission
+/*document.getElementById("submit-btn").addEventListener("click", () => {
+    let score = 0;
+    questions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="question${index}"]:checked`);
+        if (selected && parseInt(selected.value) === q.correctAnswer) {
+            score++;
+        }
+    });
+    document.getElementById("result").textContent = `You scored ${score} out of ${questions.length}.`;
+});
+*/
+    </script>
+</body>
+</html>

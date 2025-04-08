@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="email.css">
+
+    <title>Document</title>
+    <style>
+      /* Container styling */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styling */
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input field styling */
+.container input[type="text"],
+.container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for input fields */
+.container input[type="text"]:focus,
+.container input[type="email"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styling */
+.container .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+.container .btn:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <form onsubmit="emailSend(); reset(); return false;">
+            <input type="text" id="name" placeholder="name" name="name" required>
+            <input type="text" id="phpne" placeholder="phone" name="phone" required>
+            <input type="email" id="email" placeholder="email" name="email" required>
+            <button type="submit" class="btn">submit</button>
+        </form>
+
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+function emailSend(){
+
+    Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "lasyapriya1011@gmail.com",
+    Password : "B2EA5877ABB51F72D1864FC4E5A3947EEBB7",
+    To : 'lasyapriya1011@gmail.com',
+    From : "lasyapriya1011@gmail.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+}
+    </script>
+    
+</body>
+</html>

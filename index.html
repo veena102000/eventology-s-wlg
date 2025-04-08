@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Effect</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        #scrollContainer {
+            height: 200vh; /* Extend the height to enable scrolling */
+        }
+    </style>
+</head>
+<body>
+    <div id="scrollContainer">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script>
+            // Set up the scene, camera, and renderer
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // Load textures
+            const textureLoader = new THREE.TextureLoader();
+            const textures = [
+                textureLoader.load('./images/baby2.jpeg'), // Background layer
+                textureLoader.load('./images/birthday-1.jpeg'), // Mid layer
+                textureLoader.load('./images/center-2.jpeg')  // Foreground layer
+            ];
+
+            // Create layers
+            const layers = [];
+            textures.forEach((texture, index) => {
+                const geometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
+                const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.position.z = -index * 10; // Adjust z to stack layers
+                scene.add(mesh);
+                layers.push(mesh);
+            });
+
+            // Position the camera
+            camera.position.z = 0;
+
+            // Update function to adjust layers based on scroll
+            function updateLayers() {
+                const scrollY = window.scrollY;
+                layers.forEach((layer, index) => {
+                    layer.position.y = -scrollY * (index + 1) * 0.5;
+                });
+            }
+
+            // Animation function
+            function animate() {
+                requestAnimationFrame(animate);
+                updateLayers(); // Update layers based on scroll position
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle resizing
+            window.addEventListener('resize', () => {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                layers.forEach(layer => {
+                    layer.geometry.dispose(); // Clean up old geometry
+                    layer.geometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight); // New geometry
+                });
+            });
+            
+            // Handle scroll event
+            window.addEventListener('scroll', () => {
+                updateLayers();
+            });
+        </script>
+    </div>
+</body>
+</html>
+
+
+

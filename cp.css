@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Ensuring consistent font family */
+}
+
+body {
+    background-color: #f7e5da;
+    color: #832b00;
+    line-height: 1.5;
+    
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    height: 60px;
+    position: absolute; /* Changing from absolute to fixed for constant access */
+    top: 15px;
+    width: 100%;
+    z-index: 1000; /* Ensuring navbar stays on top */
+    margin-top: 20px;
+}
+
+.navbar .logo img {
+    height: 60px;
+    margin-left: -25px;
+}
+
+.navbar ul.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* add this to evenly space out links */
+    margin: 0; /* remove default margin */
+    padding: 0; /* remove default padding */
+}
+
+.navbar ul.nav-links li {
+    padding: 0 15px;
+}
+
+.navbar ul.nav-links li a {
+    text-decoration: none;
+    color:#832b00;
+    font-size: 16px;
+    transition: color 0.2s ease; /* add a smooth transition effect */
+
+}
+
+.navbar ul.nav-links li a:hover {
+    color: #832b00;
+    
+}
+
+.menu-toggle {
+    display: none;
+    cursor: url("./images/bugga.jpg") 20 20, auto;
+}
+
+
+
+.site-footer {
+  
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    margin-top: 380px;
+    background-color: #832b00;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo img {
+    width: 100px; /* Adjust size as needed */
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav li {
+    margin: 0 10px;
+}
+
+.footer-nav a {
+    color:#f7e5da;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #141313;
+}
+
+.social-media a {
+    margin: 0 5px;
+    color: #f7e5da;
+    font-size: 1.4rem; /* Adjust the size of social icons */
+}
+
+.social-media a:hover {
+    color: #f7e5da;
+}
+
+.legal-links {
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+
+.legal-links a {
+    color: #f7e5da;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.legal-links a:hover {
+    text-decoration: underline;
+}
+
+.copy-right {
+    margin-top: 10px;
+    color: #aaa;
+}
+
+
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+    }
+}
+
+
+/* Responsive Design for smaller devices */
+@media (max-width: 768px) {
+    .navbar ul.nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar ul.nav-links.active {
+        display: flex;
+    }
+
+    .feature-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-text, .feature-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        
+    }
+
+    .navbar ul.nav-links li {
+        text-align: center;
+    
+        
+    }
+}

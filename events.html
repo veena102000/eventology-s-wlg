@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /*below code is for navbar*/
+        /* Navbar Styles */
+header {
+         background:linear-gradient(to right, #f7e5da,#832b00);
+ }
+ 
+ .navbar {
+
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem;
+     color: #f7e5da;
+ }
+ 
+ .navbar .logo img {
+     height: 60px;
+     width: auto;
+ }
+ 
+ .nav-links {
+     list-style: none;
+     display: flex;
+     margin-left: 200px;
+ }
+ 
+ .nav-links li {
+     margin: 0 1rem;
+ }
+ 
+ .nav-links a {
+     color: #f7e5da;
+    /* background: linear-gradient(to right,  #f7e5da 0%, #832b00 100%);
+     background-clip: text;
+     color: transparent;*/
+     text-decoration: none;
+     font-family:serif ;
+     font-weight: bold;
+     font-size: large;
+     font-size: 1rem;
+     transition: color 0.3s;
+ }
+ 
+ .nav-links a:hover {
+     color: #080707;
+ }
+ 
+ .menu-toggle {
+     display: none;
+     flex-direction: column;
+     cursor: pointer;
+ } 
+ 
+ .menu-toggle .bar {
+     background-color: #f7e5da;
+     height: 3px;
+     width: 25px;
+     margin: 3px 0;
+     transition: 0.3s;
+ }
+ 
+ /* Responsive Styles */
+ @media (max-width: 768px) {
+     .nav-links {
+         display: none;
+         flex-direction: column;
+         width: 100%;
+         position: absolute;
+         top: 60px;
+         left: 0;
+         
+         text-align: center;
+     }
+ 
+     .nav-links.active {
+         display: flex;
+     }
+ 
+     .nav-links li {
+         margin: 1rem 0;
+     }
+ 
+     .menu-toggle {
+         display: flex;
+     }
+ }
+ 
+        body{
+            font-family: Arial,sans-serif;
+            margin:0;
+            padding: 0;
+            background:linear-gradient(to right, #f7e5da,#832b00);
+        }
+ .gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 90px;
+    height: 100%;
+    width: 100%; 
+    margin-left: 0px;
+    
+ }
+ 
+
+ /*main 1*/
+ .container {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 0px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  
+   
+  }
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  /*2*/
+  .container-1 {
+    display: block;
+    position: relative;
+    width: 60%;
+    height: 60%;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+   
+  }
+  .image-1 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+/*ffffffffffffff3*/
+.container-2 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 0px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  }
+  .image-2 {
+    opacity: 1;
+    display: flex;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    
+  }
+  
+  /*4*/
+  .container-3 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 0px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  }
+  .image-3 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+ 
+  /*5*/
+  .container-4 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  }
+  .image-4 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*6*/
+  .container-5 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+
+  }
+  .image-5 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  /*7*/
+  .container-6 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  }
+  .image-6 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  /*8*/
+  .container-7 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  }
+  .image-7 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*9*/
+  .container-8 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  
+   
+  }
+  .image-8 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+/*9*/
+ .container-9 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+  
+   
+  }
+  .image-9 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*10*/
+  .container-10 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+   
+  }
+  .image-10 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*11*/
+  .container-11 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+   
+  }
+  .image-11{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*12*/
+  .container-12 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+   
+  }
+  .image-12 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*13*/
+  .container-13 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+   
+  }
+  .image-13 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+/*14*/
+.container-14 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+   
+  }
+  .image-14 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*15*/
+  .container-15 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px;
+    margin-left: 10px;
+    border: 1px solid #832b00;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+   
+  }
+  .image-15 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  /*these css is for name, descrption, price and button*/
+  
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .gallery h2 {
+            font-size: 1.5em;
+            margin: 8px 0;
+            color: #832b00;
+        }
+        .gallery p {
+            font-size: 1em;
+            margin: 8px 0;
+            color: #832b00;
+        }
+        .gallery .price {
+            font-size: 1.2em;
+           color: #832b00;
+            margin: 8px 0;
+        }
+        .gallery .book-now {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #832b00;
+            color: #f7e5da;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .gallery .book-now:hover {
+            background-color: #f7e5da;
+            color: #832b00;
+        }
+        /*this below css is for cart items*/
+        /*.header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }*/
+         .cart-button {
+           background-color: #f7e5da;
+            color: #832b00;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .cart-button:hover {
+           border: 1px solid #832b00;  
+        }
+        .cart {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 300px;
+            background-color: #832b00;
+            box-shadow: -2px 0 5px #f7e5da;
+            padding: 20px;
+            border-left: 1px solid #ddd;
+            z-index: 1000;
+        }
+        .cart h2 {
+            margin-top: 0;
+        }
+ 
+        
+        
+        /*.gallery .book-now,
+        .gallery .add-to-cart {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        */
+       
+        .gallery .add-to-cart {/*this is for cart icon*/
+            background:linear-gradient(to right, #f7e5da,#832b00);
+            color: #832b00;
+            border: none;
+            border: 1px solid #f7e5da;
+            font-size: large;
+        }
+        .gallery .add-to-cart:hover {
+            background-color: #f7e5da;
+            color: #832b00;
+        }
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+   
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="./images/lego.png" alt="logo"/>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="insta2.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="Hire.html">Hire</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="contact-us">Contact</a></li>
+                </ul>
+                
+                <!--<div class="header"> </div>-->
+                <button class="cart-button" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i> (<span id="cart-count">0</span>)</button>
+           
+                <div class="menu-toggle" id="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+       
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+    </div><!--for cart-->
+    <div class="gallery">
+        <div class="container">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image" >
+          <h4>BIRTHDAY DECOR</h4>
+          <p class="price">$450</p>
+          <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 450)"><i class="fas fa-shopping-cart"></i></button>
+          <a href="contact-us.html" class="book-now">BOOK NOW</a>
+
+        </div>
+        
+         <div class="container-1">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-1" >
+            <h4>BIRTHDAY DECOR</h4>
+            
+            <p class="price">$550</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 550)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-2">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-2" >
+            <h4>BIRTHDAY DECOR</h4>
+           
+            <p class="price">$600</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 600)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-3">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-3" >
+            <h4>BIRTHDAY DECOR</h4>
+           
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-4">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-4" >
+            <h4>BIRTHDAY DECOR</h4>
+            
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-5">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-5" >
+            <h4>BIRTHDAY DECOR</h4>
+          
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-6">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-6" >
+            <h4>BIRTHDAY DECOR</h4>
+            
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-7">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-7" >
+            <h4>BIRTHDAY DECOR</h4>
+         
+          <p class="price">$450</p>
+          <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+          <a href="contact-us.html" class="book-now">BOOK NOW</a>
+
+        </div>
+        <div class="container-8">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image" >
+            <h4>BIRTHDAY DECOR</h4>
+           
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        
+         <div class="container-9">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-1" >
+            <h4>BIRTHDAY DECOR</h4>
+           
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-10">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-2" >
+            <h4>BIRTHDAY DECOR</h4>
+           
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-11">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-3" >
+            <h4>BIRTHDAY DECOR</h4>
+            
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-12">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-4" >
+            <h4>BIRTHDAY DECOR</h4>
+            
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-13">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-5" >
+            <h4>BIRTHDAY DECOR</h4>
+            
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-14">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-6" >
+            <h4>BIRTHDAY DECOR</h4>
+            
+            <p class="price">$450</p>
+            <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+            <a href="contact-us.html" class="book-now">BOOK NOW</a>
+  
+        </div>
+        <div class="container-15">
+            <img src="./images/birthday-6.jpeg" alt="avatar" class="image-7" >
+            <h4>BIRTHDAY DECOR</h4>
+          
+          <p class="price">$450</p>
+          <button class="add-to-cart" onclick="addToCart('Decoration Name 1', 100)"><i class="fas fa-shopping-cart"></i></button>
+          <a href="contact-us.html" class="book-now">BOOK NOW</a>
+
+        </div>
+        <script>
+             let cart = [];
+        
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.className = 'cart-item';
+                cartItemDiv.innerHTML = `${item.name} - $${item.price}`;
+                cartItemsContainer.appendChild(cartItemDiv);
+                total += item.price;
+            });
+
+            cartTotalElement.textContent = total.toFixed(2);
+            cartCountElement.textContent = cart.length;
+        }
+
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            if (cart.style.display === 'block') {
+                cart.style.display = 'none';
+            } else {
+                cart.style.display = 'block';
+            }
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+        </script>
+</body>
+</html>

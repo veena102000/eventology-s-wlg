@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /*margin: 20px;*/
+            background:linear-gradient(to right, #f7e5da,#832b00);
+        }
+.us{
+    color: #832b00;
+    margin-top: 100px;
+   font-weight: bolder;
+    font-size: 30px;
+
+
+}
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f7e5da;
+            color: #832b00;
+           
+        }
+
+        .contact-form h1 {
+           
+            margin-bottom: 20px;
+            font-size: 24px;
+            
+        }
+        .contact-form h3{
+            justify-content: center;
+            text-align: center;
+            color: #832b00;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #832b00;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="Phone Number"],
+        .contact-form input[type="Adress"],
+        .contact-form input[type="Date"],
+        .contact-form input[type="Time"],
+       
+        
+      
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #832b00;
+            height: 30px;
+        }
+        .contact-form input[type="File"],
+        .contact-form textarea {
+            
+            padding: 10px;
+            margin-bottom: 15px;
+         
+           
+            
+            color: #832b00;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: #832b00;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #f7e5da;
+            color: #832b00;
+            border: 2px solid #832b00;
+        }
+        .map{
+            position: absolute;
+            width: 600px;
+            border-radius: 5px;
+            height: 895px;
+            margin-left: 570px;
+            margin-top: -870px;
+            
+        }
+      
+       /*chatgpt for menubar*/
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color:linear-gradient(to right, #f7e5da,#832b00); 
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    /*background-color:linear-gradient(to right, #f7e5da,#832b00) ;*/
+    background-color: #832b00;
+    height: auto;
+    margin-top: -10px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f7e5da;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f7e5da;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a:hover {
+    color: #832b00;
+    
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #f7e5da;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0px;
+        right: -100%;
+        height: 100%;
+        width: 200px;
+        background:linear-gradient(to right, #f7e5da,#832b00);
+        color: #832b00;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        color: white;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-active {
+        right: 0;
+    }
+
+    .menu-icon.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+}
+
+/*you can cancel this */
+        /*fhdhfhsdfhds extras */
+        /* Dropdown container */
+        .nav-links .dropdown {
+          position: relative;
+      }
+      
+      /* Dropdown menu */
+      .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #f7e5da; /* Adjust background color as needed */
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          border-radius: 8px;
+          min-width: 160px; /* Adjust width as needed */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+          z-index: 1000;
+      }
+      
+      /* Dropdown items */
+      .dropdown-menu li {
+          padding: 10px;
+      }
+      
+      .dropdown-menu li a {
+          color: #832b00; /* Adjust text color as needed */
+          text-decoration: none;
+          display: block;
+      }
+      
+      /* Show dropdown on hover */
+      .dropdown:hover .dropdown-menu {
+          display: block;
+      }
+      
+      .dropdown-menu li a:hover {
+          /*background-color: #e4d0c1; *//* Adjust hover background color as needed */
+          color: #832b00;
+          
+          text-decoration: underline;
+      }
+      /*ending*/
+
+
+          /* Set the width and height for the map */
+          /*.map-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 50%;
+            background: linear-gradient(to right, #f7e5da,#832b00);;
+            
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 10px;
+            left: 40px;
+            width: 60%;
+            height: 60%;
+        }*/
+        /*Contact*/
+       /* .contact-info {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right:10px;
+    padding: 20px;
+    background-color: #f7e5da;
+    color: #832b00;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -50px;
+    
+    
+    margin-top:-60px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.contact-button {
+    background-color: #832b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #f7e5da;
+    color: #832b00;
+    border: 2px solid #832b00;
+}*/
+/* Container to hold both the contact info and the map */
+.contact-container {
+    display: flex;
+    /*flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;*/
+    gap: 20px;
+    margin-top: 30px;
+    width: 20px;
+    margin-left: 200px;
+}
+
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f7e5da;
+    color: #832b00;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*margin: 0 auto;*/
+    margin-left: 280px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.contact-button {
+    background-color: #832b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #f7e5da;
+    color: #832b00;
+    border: 2px solid #832b00;
+}
+
+/* Map Container */
+.map-container {
+    flex: 1;
+    /*min-width: 50%;*/
+    width: 50%;
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+  
+    background: linear-gradient(to right, #f7e5da,#832b00);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+    .map-container{
+        width: 200px;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MyApp</div>
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="insta2.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="events.html">Events</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="birthdays.html">Birthday </a></li>
+                        <li><a href="wedding.html">Wedding</a></li>
+                        <li><a href="genderreveal.html">Gender Reveal</a></li>
+                        <li><a href="babyshower.html">Baby Shower</a></li>
+                        <li><a href="events.html">All Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="hire.html">Hire</a></li>
+                <li><a href="about-us.html">About-Us</a></li>
+                <li><a href="contact-us.html">Contact-Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="us">Contact Us</div>
+
+<div class="contact-form">
+<h3>Book Your Event</h3>
+<form action="" method="POST">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<label for="Phone Number">Phone Number:</label>
+<input type="Phone number" id="Phone Number" name="Phone Number" required>
+<label for="name">Event-Type:</label>
+<input type="text" id="name" name="name" required>
+<label for="Adress">Location:</label>
+<input type="Adress" id="Adress" name="Adress" required>
+<label for="Date">Date:</label>
+<input type="Date" id="Date" name="Date" required>
+<label for="Time">Time:</label>
+<input type="Time" id="Time" name="Time" required>
+<label for="Time">Pickup-Time:</label>
+<input type="Time" id="Time" name="Time" required>
+<label for="File">Image:</label>
+<input type="File" id="File" name="File" required>
+<label for="message">Tell Us About Your Event:</label>
+<textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+       <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.472367255647!2d174.82886537509856!3d-41.1460429317309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d3f533e1219d301%3A0x1617a76620a3a2ee!2s72%20Hokioi%20Drive%2C%20Kenepuru%2C%20Porirua%205022!5e0!3m2!1sen!2snz!4v1725495657602!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+    <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>We're here to help you plan and execute the perfect event. Whether you have questions, need assistance with booking, or want to discuss your event in detail, feel free to reach out to us!</p>
+        <button class="contact-button" onclick="window.location.href='mailto:info@yourwebsite.com';">Contact Us</button>
+    </div>
+     
+    
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            menuIcon.classList.toggle('active');
+        });
+        
+        // Close the menu when a menu item is clicked
+        const menuItems = document.querySelectorAll('.nav-links li a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+                menuIcon.classList.remove('active');
+            });
+        });
+        
+        // Close the menu when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuIcon.contains(e.target)) {
+                navLinks.classList.remove('nav-active');
+                menuIcon.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+

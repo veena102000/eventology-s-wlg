@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- === style sheet ====  -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ffebc4, #ffebc4);
+            overflow: hidden; /* Prevent scrolling */
+            position: relative; /* Required for positioning the top-right corner div */
+            cursor: url('/assets/Designer.png')20 20, auto; /* Add your custom balloon cursor */
+            
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 20%;
+            background: #ffebc4;
+            padding: 0px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1001; /* Ensure it appears above other elements */
+        }
+
+        .menu-bar img {
+            height: 90px;
+            width: 190px;
+            padding-top: 8px;
+        }
+
+        .menu-bar .menu-items {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu-bar .menu-items a {
+            position: relative;
+            padding-left: 5%;
+            color: #f58a2f;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight:500;
+            transition: color 0.3s ease;
+        }
+
+        .menu-bar .menu-items a:hover {
+            color: #ec4b24;
+        }
+
+        .menu-bar .menu-items a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #ec4b24;
+            transition: width 0.3s ease;
+        }
+
+        .menu-bar .menu-items a:hover::after {
+            width: 100%;
+        }
+
+        .slider {
+            position: relative;
+            margin-top: 100px;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            align-items: center;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            transform: rotateX(-42deg);
+        }
+
+        .slider span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i) * 3.6deg)) translateZ(300px) rotateY(110deg);
+        }
+
+        .slider span img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 40%;
+            border-radius: 10px;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+
+        .slider span:hover img {
+            transform: translateX(-50px) scale(1.2);
+            
+        }
+
+        /* Top-right corner image container */
+        .top-right-img {
+            position: absolute;
+            top: 200px;
+            right: 440px;
+            width: 400px;
+            height: 215px;
+            
+            border: none;
+            border-radius: none;
+            overflow: hidden;
+            display: flex;
+            z-index: 1000; /* Ensure it appears above other elements */
+            justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #333; /* Text color */
+        }
+
+        .top-right-img img {
+            display: none; /* Hidden by default */
+            width: 75%;
+            height: 75%;
+            object-fit: cover;
+        }
+        .top-right-img p {
+    margin: 0;
+    color: #f58a2f;
+    font-size:30px;
+    font-weight:400;
+    padding: 10px 20px; /* Add some padding around the text */
+    background-color: #ffebc4; /* Set your desired background color */
+    text-align: center;
+}
+
+  /* Section names around the wheel */
+  .section-name {
+            position: absolute;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ec4b24;
+            transform-origin: center;
+        }
+        
+        /* Position the section names around the wheel */
+        .section-1 {   top: 200px; right: 200px;  }
+
+
+    </style>
+    <title>3D Image Slider</title>
+</head>
+
+<body>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <img src="/assets/Final2.png" alt="Logo"> <!-- Add your logo here -->
+        <div class="menu-items">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="slider">
+        <!-- Existing spans with images -->
+        <span style="--i:1;"><img src="./images/attarct.jpeg" alt="Image 1"></span>
+        <span style="--i:2;"><img src="./images/baby shower-1.jpeg" alt="Image 2"></span>
+        <span style="--i:3;"><img src="./images/baby shower-2.jpeg" alt="Image 3"></span>
+        <span style="--i:4;"><img src="./images/baby shower-2.jpeg " alt="Image 4"></span>
+        <span style="--i:5;"><img src="./images/baby-4.jpeg" alt="Image 5"></span>
+        <span style="--i:6;"><img src="./images/baby2.jpeg" alt="Image 6"></span>
+        <span style="--i:7;"><img src="./images/babyg.jpg" alt="Image 7"></span>
+        <span style="--i:8;"><img src="/./images/babyshower-1.jpeg" alt="Image 8"></span>
+        <span style="--i:9;"><img src="./images/birthday-1.jpeg" alt="Image 9"></span>
+        <span style="--i:10;"><img src="./images/birthday-1.jpeg" alt="Image 10"></span>
+        <span style="--i:11;"><img src="./images/birthday-6.jpeg" alt="Image 11"></span>
+        <span style="--i:12;"><img src="./images/attract.jpeg" alt="Image 12"></span>
+        <span style="--i:13;"><img src="./images/babyshower-1.jpeg" alt="Image 13"></span>
+        <span style="--i:14;"><img src="./images/jungle-4 s.jpeg" alt="Image 14"></span>
+        <span style="--i:15;"><img src="./images/baby shower-1.jpeg" alt="Image 15"></span>
+        <span style="--i:16;"><img src="./images/baby2.jpeg" alt="Image 16"></span>
+        <span style="--i:17;"><img src="./images/baby2.jpeg" alt="Image 17"></span>
+        <span style="--i:18;"><img src="./images/baby-4.jpeg" alt="Image 18"></span>
+        <span style="--i:19;"><img src="./images/baby2.jpeg" alt="Image 19"></span>
+        <span style="--i:20;"><img src="./images/babyg.jpg" alt="Image 20"></span>
+        <span style="--i:21;"><img src="./images/babyshower-1.jpeg" alt="Image 21"></span>
+        <span style="--i:22;"><img src="./images/babyg.jpg" alt="Image 22"></span>
+        <span style="--i:23;"><img src="./images/babyg.jpg" alt="Image 23"></span>
+        <span style="--i:24;"><img src="./images/babyg.jpg" alt="Image 24"></span>
+        <span style="--i:25;"><img src="./images/babyshower-1.jpeg" alt="Image 25"></span>
+        <span style="--i:26;"><img src="./images/babyshower-1.jpeg" alt="Image 26"></span>
+        <span style="--i:27;"><img src="./images/birthday-6.jpeg" alt="Image 27"></span>
+        <span style="--i:28;"><img src="./images/babyg.jpg" alt="Image 28"></span>
+        <span style="--i:29;"><img src="./images/babyg.jpg" alt="Image 29"></span>
+        <span style="--i:30;"><img src="./images/babyshower-1.jpeg" alt="Image 30"></span>
+        <span style="--i:31;"><img src="./images/babyshower-1.jpeg" alt="Image 31"></span>
+        <span style="--i:32;"><img src="./images/center-2.jpeg" alt="Image 32"></span>
+        <span style="--i:33;"><img src="./images/jungle-4 s.jpeg" alt="Image 33"></span>
+        <span style="--i:34;"><img src="./images/babyg.jpg" alt="Image 34"></span>
+        <span style="--i:35;"><img src="./images/babyshower-1.jpeg" alt="Image 35"></span>
+        <span style="--i:36;"><img src="./images/attarct.jpeg" alt="Image 1"></span>
+        <span style="--i:37;"><img src="./images/baby shower-1.jpeg" alt="Image 2"></span>
+        <span style="--i:38;"><img src="./images/baby shower-2.jpeg" alt="Image 3"></span>
+        <span style="--i:39;"><img src="./images/baby shower-2.jpeg " alt="Image 4"></span>
+        <span style="--i:40;"><img src="./images/baby-4.jpeg" alt="Image 5"></span>
+        <span style="--i:41;"><img src="./images/baby2.jpeg" alt="Image 6"></span>
+        <span style="--i:42;"><img src="./images/babyg.jpg" alt="Image 7"></span>
+        <span style="--i:43;"><img src="/./images/babyshower-1.jpeg" alt="Image 8"></span>
+        <span style="--i:44;"><img src="./images/birthday-1.jpeg" alt="Image 9"></span>
+        <span style="--i:45;"><img src="./images/birthday-1.jpeg" alt="Image 10"></span>
+        <span style="--i:46;"><img src="./images/birthday-6.jpeg" alt="Image 11"></span>
+        <span style="--i:47;"><img src="./images/attract.jpeg" alt="Image 12"></span>
+        <span style="--i:48;"><img src="./images/babyshower-1.jpeg" alt="Image 13"></span>
+        <span style="--i:49;"><img src="./images/jungle-4 s.jpeg" alt="Image 14"></span>
+        <span style="--i:50;"><img src="./images/baby shower-1.jpeg" alt="Image 15"></span>
+        <span style="--i:51;"><img src="./images/baby2.jpeg" alt="Image 16"></span>
+        <span style="--i:52;"><img src="./images/baby2.jpeg" alt="Image 17"></span>
+        <span style="--i:53;"><img src="./images/baby-4.jpeg" alt="Image 18"></span>
+        <span style="--i:54;"><img src="./images/baby2.jpeg" alt="Image 19"></span>
+        <span style="--i:55;"><img src="./images/babyg.jpg" alt="Image 20"></span>
+        <span style="--i:56;"><img src="./images/babyshower-1.jpeg" alt="Image 21"></span>
+        <span style="--i:57;"><img src="./images/babyg.jpg" alt="Image 22"></span>
+        <span style="--i:58;"><img src="./images/babyg.jpg" alt="Image 23"></span>
+        <span style="--i:59;"><img src="./images/babyg.jpg" alt="Image 24"></span>
+        <span style="--i:60;"><img src="./images/babyshower-1.jpeg" alt="Image 25"></span>
+        <span style="--i:61;"><img src="./images/babyshower-1.jpeg" alt="Image 26"></span>
+        <span style="--i:62;"><img src="./images/birthday-6.jpeg" alt="Image 27"></span>
+        <span style="--i:63;"><img src="./images/babyg.jpg" alt="Image 28"></span>
+        <span style="--i:64;"><img src="./images/babyg.jpg" alt="Image 29"></span>
+        <span style="--i:65;"><img src="./images/babyshower-1.jpeg" alt="Image 30"></span>
+        <span style="--i:66;"><img src="./images/babyshower-1.jpeg" alt="Image 31"></span>
+        <span style="--i:67;"><img src="./images/center-2.jpeg" alt="Image 32"></span>
+        <span style="--i:68;"><img src="./images/jungle-4 s.jpeg" alt="Image 33"></span>
+        <span style="--i:69;"><img src="./images/babyg.jpg" alt="Image 34"></span>
+        <span style="--i:70;"><img src="./images/babyshower-1.jpeg" alt="Image 35"></span>
+        <span style="--i:71;"><img src="./images/attarct.jpeg" alt="Image 1"></span>
+        <span style="--i:72;"><img src="./images/baby shower-1.jpeg" alt="Image 2"></span>
+        <span style="--i:73;"><img src="./images/baby shower-2.jpeg" alt="Image 3"></span>
+        <span style="--i:74;"><img src="./images/baby shower-2.jpeg " alt="Image 4"></span>
+        <span style="--i:75;"><img src="./images/baby-4.jpeg" alt="Image 5"></span>
+        <span style="--i:76;"><img src="./images/baby2.jpeg" alt="Image 6"></span>
+        <span style="--i:77;"><img src="./images/babyg.jpg" alt="Image 7"></span>
+        <span style="--i:78;"><img src="/./images/babyshower-1.jpeg" alt="Image 8"></span>
+        <span style="--i:79;"><img src="./images/birthday-1.jpeg" alt="Image 9"></span>
+        <span style="--i:80;"><img src="./images/birthday-1.jpeg" alt="Image 10"></span>
+        <span style="--i:81;"><img src="./images/birthday-6.jpeg" alt="Image 11"></span>
+        <span style="--i:82;"><img src="./images/attract.jpeg" alt="Image 12"></span>
+        <span style="--i:83;"><img src="./images/babyshower-1.jpeg" alt="Image 13"></span>
+        <span style="--i:84;"><img src="./images/jungle-4 s.jpeg" alt="Image 14"></span>
+        <span style="--i:85;"><img src="./images/baby shower-1.jpeg" alt="Image 15"></span>
+        <span style="--i:86;"><img src="./images/baby2.jpeg" alt="Image 16"></span>
+        <span style="--i:87;"><img src="./images/baby2.jpeg" alt="Image 17"></span>
+        <span style="--i:88;"><img src="./images/baby-4.jpeg" alt="Image 18"></span>
+        <span style="--i:89;"><img src="./images/baby2.jpeg" alt="Image 19"></span>
+        <span style="--i:90;"><img src="./images/babyg.jpg" alt="Image 20"></span>
+        <span style="--i:91;"><img src="./images/attarct.jpeg" alt="Image 1"></span>
+        <span style="--i:92;"><img src="./images/baby shower-1.jpeg" alt="Image 2"></span>
+        <span style="--i:93;"><img src="./images/baby shower-2.jpeg" alt="Image 3"></span>
+        <span style="--i:94;"><img src="./images/baby shower-2.jpeg " alt="Image 4"></span>
+        <span style="--i:95;"><img src="./images/baby-4.jpeg" alt="Image 5"></span>
+        <span style="--i:96;"><img src="./images/baby2.jpeg" alt="Image 6"></span>
+        <span style="--i:97;"><img src="./images/babyg.jpg" alt="Image 7"></span>
+        <span style="--i:98;"><img src="/./images/babyshower-1.jpeg" alt="Image 8"></span>
+        <span style="--i:99;"><img src="./images/birthday-1.jpeg" alt="Image 9"></span>
+        <span style="--i:100;"><img src="./images/birthday-1.jpeg" alt="Image 10"></span>
+       
+    </div>
+    <div class="section-name section-1">Section 1</div>
+    <!-- Top-right corner image container -->
+    <div class="top-right-img" id="top-right-img">
+        <p>We Make<br> Your Events Most Memorable</p>
+        <img src="" alt="Duplicated Image">
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        let rotationY = 0;
+
+        window.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            rotationY += event.deltaY * 0.2;
+            slider.style.transform = `rotateX(-30.5deg) rotateY(${rotationY}deg)`;
+        });
+
+        // Hover effect to duplicate image to the top-right corner
+        const topRightImgDiv = document.getElementById('top-right-img');
+        const topRightImg = topRightImgDiv.querySelector('img');
+        const topRightText = topRightImgDiv.querySelector('p');
+
+        slider.addEventListener('mouseover', (event) => {
+            if (event.target.tagName === 'IMG') {
+                topRightText.style.display = 'none';  // Hide the text
+                topRightImg.src = event.target.src;
+                topRightImg.style.display = 'block';//show the image
+            }
+        });
+
+        slider.addEventListener('mouseout', (event) => {
+            if (event.target.tagName === 'IMG') {
+                topRightImg.style.display = 'none';
+                topRightText.style.display = 'block';  // Show the text
+            }
+        });
+    </script>
+</body>
+
+</html>
