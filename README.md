@@ -1,5 +1,6 @@
 hello,
-Please open only the insta2.html file to view the final output. The other files were created for practice and to explore different outcomes.
+Please open only the insta2.html file to view the final output. The other files were created for practice and to explore different outcomes. and I have provided details below regarding the files related to Eventology's WLG website.
+------------------------------------------------------------------------
 *main page for insta2.html,insta2.css and insta2.js
 *for Events page ==> events.html
    for Birthday dropdown ==> birthdays.html
@@ -10,4 +11,5 @@ Please open only the insta2.html file to view the final output. The other files 
 *for Hire page ==> Hire.html
 *for About-Us page ==> about-us.html
 *for Contact-Us page  ==> contact-us.html
+-----------------------------------------------------------------------
 thank you.
