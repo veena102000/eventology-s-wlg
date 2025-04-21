@@ -180,3 +180,20 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.classList.toggle('active');
     };
 });
+//javascript for python
+const formData = {
+    name: document.getElementById('name').value,
+    event_type: document.getElementById('event_type').value,
+    event_time: document.getElementById('event_time').value,
+};
+
+fetch('http://127.0.0.1:5000/send_email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData),
+})
+.then(response => response.json())
+.then(data => alert(data.message))
+.catch(error => console.error('Error:', error));
+//ending of python code
+
